@@ -24,7 +24,7 @@ TrainerNames:
 	db "BIRD KEEPER@"
 	db "BLACKBELT@"
 	db "RIVAL1@"
-	db "PROF.OAK@"
+	db "RANDOMOUSCRAP@"
 	db "CHIEF@"
 	db "SCIENTIST@"
 	db "BROKENR3C0RD@"
