@@ -73,6 +73,8 @@ RedisplayStartMenu_DoNotDrawStartMenu:
 	jp z, StartMenu_SaveReset
 	cp a, 5
 	jp z, StartMenu_Option
+	cp a, 6
+	jp z, Cell
 
 ; EXIT falls through to here
 CloseStartMenu::
@@ -82,3 +84,12 @@ CloseStartMenu::
 	jr nz, CloseStartMenu
 	call LoadTextBoxTilePatterns
 	jp CloseTextDisplay
+
+Cell:
+	ld hl, TurnedOnCellText
+	call PrintText
+	callba PlayerPCMenu
+	jp CloseStartMenu
+
+TurnedOnCellText:
+	TX_FAR _TurnedOnCellText

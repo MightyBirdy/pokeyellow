@@ -1699,6 +1699,11 @@ _TurnedOnPC1Text::
 	line "the PC."
 	prompt
 
+_TurnedOnCellText::
+	text "<PLAYER> turned on"
+	line "their cell phone."
+	prompt
+
 _AccessedBillsPCText::
 	text "Accessed BILL's"
 	line "PC."

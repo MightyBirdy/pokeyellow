@@ -127,7 +127,7 @@ DrawStartMenu:
 	call PrintStartMenuItem
 	ld de,StartMenuOptionText
 	call PrintStartMenuItem
-	ld de,StartMenuExitText
+	ld de,StartMenuCellText
 	call PlaceString
 	ld hl,wd730
 	res 6,[hl] ; turn pauses between printing letters back on
@@ -148,11 +148,11 @@ StartMenuSaveText:
 StartMenuResetText:
 	db "RESET@"
 
-StartMenuExitText:
-	db "EXIT@"
+StartMenuCellText:
+	db "CELL@"
 
 StartMenuOptionText:
-	db "OPTION@"
+	db "OPTIONS@"
 
 PrintStartMenuItem:
 	push hl

@@ -160,25 +160,10 @@ TextBoxCoordTable:
 ; 08: row of beginning of text
 ; table of window positions and corresponding text [key, start column, start row, end column, end row, text pointer [2 bytes], text column, text row]
 TextBoxTextAndCoordTable:
-	db JP_MOCHIMONO_MENU_TEMPLATE
-	db 0,0,14,17   ; text box coordinates
-	dw JapaneseMochimonoText
-	db 3,0   ; text coordinates
-
 	db USE_TOSS_MENU_TEMPLATE
 	db 13,10,19,14 ; text box coordinates
 	dw UseTossText
 	db 15,11 ; text coordinates
-
-	db JP_SAVE_MESSAGE_MENU_TEMPLATE
-	db 0,0,7,5     ; text box coordinates
-	dw JapaneseSaveMessageText
-	db 2,2   ; text coordinates
-
-	db JP_SPEED_OPTIONS_MENU_TEMPLATE
-	db 0,6,5,10    ; text box coordinates
-	dw JapaneseSpeedOptionsText
-	db 2,7   ; text coordinates
 
 	db BATTLE_MENU_TEMPLATE
 	db 8,12,19,17  ; text box coordinates
@@ -205,16 +190,6 @@ TextBoxTextAndCoordTable:
 	dw MoneyText
 	db 13,0  ; text coordinates
 
-	db JP_AH_MENU_TEMPLATE
-	db 7,6,11,10   ; text box coordinates
-	dw JapaneseAhText
-	db 8,8   ; text coordinates
-
-	db JP_POKEDEX_MENU_TEMPLATE
-	db 11,8,19,17  ; text box coordinates
-	dw JapanesePokedexMenu
-	db 12,10 ; text coordinates
-
 ; note that there is no terminator
 
 BuySellQuitText:
@@ -226,23 +201,8 @@ UseTossText:
 	db   "USE"
 	next "TOSS@"
 
-JapaneseSaveMessageText:
-	db   "きろく"
-	next "メッセージ@"
-
-JapaneseSpeedOptionsText:
-	db   "はやい"
-	next "おそい@"
-
 MoneyText:
 	db "MONEY@"
-
-JapaneseMochimonoText:
-	db "もちもの@"
-
-JapaneseMainMenuText:
-	db   "つづきから"
-	next "さいしょから@"
 
 BattleMenuText:
 	db   "FIGHT ",$E1,$E2
@@ -256,15 +216,6 @@ SwitchStatsCancelText:
 	db   "SWITCH"
 	next "STATS"
 	next "CANCEL@"
-
-JapaneseAhText:
-	db "アッ!@"
-
-JapanesePokedexMenu:
-	db   "データをみる"
-	next "なきごえ"
-	next "ぶんぷをみる"
-	next "キャンセル@"
 
 DisplayMoneyBox:
 	ld hl, wd730
@@ -503,8 +454,6 @@ TwoOptionMenuStrings:
 	dw .SouthEastMenu
 	db 6,3,0
 	dw .YesNoMenu
-	db 6,3,0
-	dw .NorthEastMenu
 	db 7,3,0
 	dw .TradeCancelMenu
 	db 7,4,1
@@ -520,8 +469,6 @@ TwoOptionMenuStrings:
 	db "NORTH",$4E,"WEST@"
 .SouthEastMenu
 	db "SOUTH",$4E,"EAST@"
-.NorthEastMenu
-	db "NORTH",$4E,"EAST@"
 .TradeCancelMenu
 	db "TRADE",$4E,"CANCEL@"
 .HealCancelMenu
