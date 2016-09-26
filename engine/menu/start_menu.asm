@@ -93,3 +93,4 @@ Cell:
 
 TurnedOnCellText:
 	TX_FAR _TurnedOnCellText
+	db "@"
