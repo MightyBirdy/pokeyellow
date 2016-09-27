@@ -1,4 +1,4 @@
-# Pokémon SBS Editiom
+# Pokémon SBS Edition
 
 This is a ROM hack based on a disassembly of Pokémon Yellow by Pret.
 
