@@ -88,7 +88,10 @@ CloseStartMenu::
 Cell:
 	ld hl, TurnedOnCellText
 	call PrintText
-	callba PlayerPCMenu
+	ld a, [wFlags_0xcd60]
+	and a, %00000100
+	ld [wFlags_0xcd60], a
+	callba PCMainMenu
 	jp CloseStartMenu
 
 TurnedOnCellText:
