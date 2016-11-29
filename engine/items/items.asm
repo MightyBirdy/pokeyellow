@@ -1308,12 +1308,19 @@ ItemUseMedicine:
 	jp .done
 
 .doneHealing
+	; Do happiness addition
+	push hl
+        push de
+        callabd_ModifyPikachuHappiness PIKAHAPPY_USEDITEM
+        pop de
+        pop hl
 	ld a, [wPseudoItemID]
 	and a ; using Softboiled?
 	jr nz, .skipRemovingItem ; no item to remove if using Softboiled
 	push hl
 	call RemoveUsedItem
 	pop hl
+	
 .skipRemovingItem
 	ld a, [wcf91]
 	cp FULL_RESTORE
