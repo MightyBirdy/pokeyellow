@@ -823,7 +823,6 @@ WeepinbellPicBack:    INCBIN "pic/monback/weepinbellb.pic"
 VictreebelPicFront:   INCBIN "pic/ymon/victreebel.pic"
 VictreebelPicBack:    INCBIN "pic/monback/victreebelb.pic"
 
-INCLUDE "engine/titlescreen2.asm"
 INCLUDE "engine/slot_machine.asm"
 INCLUDE "engine/game_corner_slots.asm"
 

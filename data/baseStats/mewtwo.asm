@@ -6,7 +6,7 @@ db 130 ; base speed
 db 154 ; base special
 db PSYCHIC ; species type 1
 db PSYCHIC ; species type 2
-db 3 ; catch rate
+db 255 ; catch rate
 db 220 ; base exp yield
 INCBIN "pic/ymon/mewtwo.pic",0,1 ; 77, sprite dimensions
 dw MewtwoPicFront

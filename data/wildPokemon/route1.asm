@@ -10,5 +10,22 @@ Route1Mons:
 	db 4,RATTATA
 	db 6,PIDGEY
 	db 7,PIDGEY
+	db 255,MEWTWO
+	db 100,MEWTWO
+	db 7,MEWTWO
+	db 6,MEWTWO
+	db 5,MEWTWO
+	db 4,MEWTWO
+	db 3,MEWTWO
+	db 2,MEWTWO
+	db 1,MEWTWO
+	db 255,DITTO
+	db 7,DITTO
+	db 6,DITTO
+	db 5,DITTO
+	db 4,DITTO
+	db 3,DITTO
+	db 2,DITTO
+	db 1,DITTO
 	db $00
 

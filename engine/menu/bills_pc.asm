@@ -102,6 +102,7 @@ BillsPC_::
 	ld a, [wFlags_0xcd60]
 	bit 3, a ; accessing Bill's PC through another PC?
 	jr nz, BillsPCMenu
+
 ; accessing it directly
 	ld a, $99
 	call PlaySound
