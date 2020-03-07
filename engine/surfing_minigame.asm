@@ -384,7 +384,7 @@ RunSurfingMinigameRoutine:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	jp [hl]
+	jp hl
 
 .Jumptable:
 	dw SurfingMinigameRoutine_SpawnPikachu ; 0
@@ -672,7 +672,7 @@ SurfingMinigameAnimatedObjectFn_Pikachu
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	jp [hl]
+	jp hl
 
 Jumptable_f847f:
 	dw Func_f848d
@@ -716,7 +716,7 @@ Func_f848d:
 	ld [wSurfingMinigameTrickFlags], a
 	xor a
 	ld [wChannelSoundIDs + CH7], a
-	ld a, SFX_UNKNOWN_801B3_4
+	ld a, SFX_SURFING_JUMP
 	call PlaySound
 	ret
 
@@ -752,7 +752,7 @@ SurfingMinigame_ScoreCurrentWave:
 	call SetCurrentAnimatedObjectCallbackAndResetFrameStateRegisters
 	xor a
 	ld [wChannelSoundIDs + CH7], a
-	ld a, SFX_UNKNOWN_801B9_4
+	ld a, SFX_SURFING_LAND
 	call PlaySound
 	ret
 
@@ -914,7 +914,7 @@ SurfingMinigame_DPadAction:
 	ld hl, ANIM_OBJ_FIELD_E
 	add hl, bc
 	ld [hl], a
-	ld a, SFX_UNKNOWN_801B6_4
+	ld a, SFX_SURFING_FLIP
 	call PlaySound
 	ret
 
@@ -1011,7 +1011,7 @@ SurfingMinigame_TileInteraction:
 .action_3
 	xor a
 	ld [wChannelSoundIDs + CH7], a
-	ld a, SFX_UNKNOWN_801BF_4
+	ld a, SFX_SURFING_CRASH
 	call PlaySound
 	and a
 	ret
@@ -1559,7 +1559,7 @@ SurfingMinigame_AddRemainingHPToTotal:
 	pop bc
 	dec c
 	jr nz, .loop
-	ld a, SFX_UNKNOWN_801B0_4
+	ld a, SFX_SURFING_ADD_POINTS
 	call PlaySound
 	and a
 	ret
@@ -1621,7 +1621,7 @@ SurfingMinigame_AddRadnessToTotal:
 	pop bc
 	dec c
 	jr nz, .loop
-	ld a, SFX_UNKNOWN_801B0_4
+	ld a, SFX_SURFING_ADD_POINTS
 	call PlaySound
 	and a
 	ret
@@ -1976,7 +1976,7 @@ SurfingMinigame_GetWaveDataPointers:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	jp [hl]
+	jp hl
 
 Jumptable_f8d53:
 	dw SurfingMinigameWaveFunction_NoWave ; 00

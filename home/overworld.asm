@@ -1081,7 +1081,7 @@ IsSpriteInFrontOfPlayer::
 	ld d, $10 ; talking range in pixels (normal range)
 IsSpriteInFrontOfPlayer2::
 	lb bc, $3c, $40 ; Y and X position of player sprite
-	ld a, [wPlayerFacingDirection] ; direction the player is facing
+	ld a, [wSpritePlayerStateData1FacingDirection] ; direction the player is facing
 .checkIfPlayerFacingUp
 	cp SPRITE_FACING_UP
 	jr nz, .checkIfPlayerFacingDown
@@ -1761,7 +1761,7 @@ RunMapScript::
 	ld l, a
 	ld de, .return
 	push de
-	jp [hl] ; jump to script
+	jp hl ; jump to script
 .return
 	ret
 

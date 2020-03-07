@@ -205,7 +205,7 @@ wc0f3:: ds 1
 wc0f4:: ds 1
 wc0f5:: ds 11
 
-SECTION "Sprite State Data", WRAM0[$c100]
+SECTION "Sprite State Data", WRAM0
 
 wSpriteDataStart::
 
@@ -230,41 +230,36 @@ wSpriteStateData1:: ; c100
 ; C1xE
 ; C1xF
 spritestatedata1: MACRO
-w\1SpriteStateData1::
-w\1PictureID:: db ; 0
-w\1MovementStatus:: db ; 1
-w\1SpriteImageIdx:: db ; 2
-w\1YStepVector:: db ; 3
-w\1YPixels:: db ; 4
-w\1XStepVector:: db ; 5
-w\1XPixels:: db ; 6
-w\1IntraAnimFrameCounter:: db ; 7
-w\1AnimFrameCounter:: db ; 8
-w\1FacingDirection:: db ; 9
+\1PictureID:: db
+\1MovementStatus:: db
+\1ImageIndex:: db
+\1YStepVector:: db
+\1YPixels:: db
+\1XStepVector:: db
+\1XPixels:: db
+\1IntraAnimFrameCounter:: db
+\1AnimFrameCounter:: db
+\1FacingDirection:: db
 	ds 6
-w\1SpriteStateData1End::
+\1End::
 endm
 
-	spritestatedata1 Player
-	spritestatedata1 Sprite01
-	spritestatedata1 Sprite02
-	spritestatedata1 Sprite03
-	spritestatedata1 Sprite04
-	spritestatedata1 Sprite05
-	spritestatedata1 Sprite06
-	spritestatedata1 Sprite07
-	spritestatedata1 Sprite08
-	spritestatedata1 Sprite09
-	spritestatedata1 Sprite10
-	spritestatedata1 Sprite11
-	spritestatedata1 Sprite12
-	spritestatedata1 Sprite13
-	spritestatedata1 Sprite14
-	spritestatedata1 Pikachu
-	; ds $10 * $10
-
-
-;SECTION "Sprite State Data 2", WRAM0[$c200]
+wSpritePlayerStateData1::   spritestatedata1 wSpritePlayerStateData1
+wSprite01StateData1::       spritestatedata1 wSprite01StateData1
+wSprite02StateData1::       spritestatedata1 wSprite02StateData1
+wSprite03StateData1::       spritestatedata1 wSprite03StateData1
+wSprite04StateData1::       spritestatedata1 wSprite04StateData1
+wSprite05StateData1::       spritestatedata1 wSprite05StateData1
+wSprite06StateData1::       spritestatedata1 wSprite06StateData1
+wSprite07StateData1::       spritestatedata1 wSprite07StateData1
+wSprite08StateData1::       spritestatedata1 wSprite08StateData1
+wSprite09StateData1::       spritestatedata1 wSprite09StateData1
+wSprite10StateData1::       spritestatedata1 wSprite10StateData1
+wSprite11StateData1::       spritestatedata1 wSprite11StateData1
+wSprite12StateData1::       spritestatedata1 wSprite12StateData1
+wSprite13StateData1::       spritestatedata1 wSprite13StateData1
+wSprite14StateData1::       spritestatedata1 wSprite14StateData1
+wSpritePikachuStateData1::  spritestatedata1 wSpritePikachuStateData1
 
 wSpriteStateData2:: ; c200
 ; more data for all sprites on the current map
@@ -287,44 +282,42 @@ wSpriteStateData2:: ; c200
 ; C2xE: sprite image base offset (in video ram, player always has value 1, used to compute c1x2)
 ; C2xF
 spritestatedata2: MACRO
-w\1SpriteStateData2::
-w\1WalkAnimationCounter:: db ; 0
+\1WalkAnimationCounter:: db
 	ds 1
-w\1YDisplacement:: db ; 2
-w\1XDisplacement:: db ; 3
-w\1MapY:: db ; 4
-w\1MapX:: db ; 5
-w\1MovementByte1:: db ; 6
-w\1GrassPriority:: db ; 7
-w\1MovementDelay:: db ; 8
+\1YDisplacement:: db
+\1XDisplacement:: db
+\1MapY:: db
+\1MapX:: db
+\1MovementByte1:: db
+\1GrassPriority:: db
+\1MovementDelay:: db
 	ds 5
-w\1SpriteImageBaseOffset:: db ; e
+\1ImageBaseOffset:: db
 	ds 1
-w\1SpriteStateData2End::
+\1End::
 endm
 
-	spritestatedata2 Player
-	spritestatedata2 Sprite01
-	spritestatedata2 Sprite02
-	spritestatedata2 Sprite03
-	spritestatedata2 Sprite04
-	spritestatedata2 Sprite05
-	spritestatedata2 Sprite06
-	spritestatedata2 Sprite07
-	spritestatedata2 Sprite08
-	spritestatedata2 Sprite09
-	spritestatedata2 Sprite10
-	spritestatedata2 Sprite11
-	spritestatedata2 Sprite12
-	spritestatedata2 Sprite13
-	spritestatedata2 Sprite14
-	spritestatedata2 Pikachu
-	; ds $10 * $10
+wSpritePlayerStateData2::   spritestatedata2 wSpritePlayerStateData2
+wSprite01StateData2::       spritestatedata2 wSprite01StateData2
+wSprite02StateData2::       spritestatedata2 wSprite02StateData2
+wSprite03StateData2::       spritestatedata2 wSprite03StateData2
+wSprite04StateData2::       spritestatedata2 wSprite04StateData2
+wSprite05StateData2::       spritestatedata2 wSprite05StateData2
+wSprite06StateData2::       spritestatedata2 wSprite06StateData2
+wSprite07StateData2::       spritestatedata2 wSprite07StateData2
+wSprite08StateData2::       spritestatedata2 wSprite08StateData2
+wSprite09StateData2::       spritestatedata2 wSprite09StateData2
+wSprite10StateData2::       spritestatedata2 wSprite10StateData2
+wSprite11StateData2::       spritestatedata2 wSprite11StateData2
+wSprite12StateData2::       spritestatedata2 wSprite12StateData2
+wSprite13StateData2::       spritestatedata2 wSprite13StateData2
+wSprite14StateData2::       spritestatedata2 wSprite14StateData2
+wSpritePikachuStateData2::  spritestatedata2 wSpritePikachuStateData2
 
 wSpriteDataEnd::
 
 
-SECTION "OAM Buffer", WRAM0[$c300]
+SECTION "OAM Buffer", WRAM0
 
 wOAMBuffer:: ; c300
 ; buffer for OAM data. Copied to OAM by DMA
@@ -351,7 +344,6 @@ wAnimatedObjectStartTileOffsets::
 	ds 10 * 2
 wAnimatedObjectDataStructs:: ; c51c
 animated_object: macro
-\1::
 \1Index::          db ; 0
 \1FramesetID::     db ; 1
 \1AnimSeqID::      db ; 2
@@ -367,29 +359,29 @@ animated_object: macro
 \1End::
 	endm
 
-	animated_object AnimatedObject0
-	animated_object AnimatedObject1
-	animated_object AnimatedObject2
-	animated_object AnimatedObject3
-	animated_object AnimatedObject4
-	animated_object AnimatedObject5
-	animated_object AnimatedObject6
-	animated_object AnimatedObject7
-	animated_object AnimatedObject8
-	animated_object AnimatedObject9
+wAnimatedObject0:: animated_object wAnimatedObject0
+wAnimatedObject1:: animated_object wAnimatedObject1
+wAnimatedObject2:: animated_object wAnimatedObject2
+wAnimatedObject3:: animated_object wAnimatedObject3
+wAnimatedObject4:: animated_object wAnimatedObject4
+wAnimatedObject5:: animated_object wAnimatedObject5
+wAnimatedObject6:: animated_object wAnimatedObject6
+wAnimatedObject7:: animated_object wAnimatedObject7
+wAnimatedObject8:: animated_object wAnimatedObject8
+wAnimatedObject9:: animated_object wAnimatedObject9
 
 wNumLoadedAnimatedObjects:: ; c5bc
 	ds 1
 wCurrentAnimatedObjectOAMBufferOffset:: ; c5bd
 	ds 3
 wAnimatedObjectSpawnStateDataPointer:: ; c5c0
-	dw
+	ds 2
 wAnimatedObjectFramesDataPointer:: ; c5c2
-	dw
+	ds 2
 wAnimatedObjectJumptablePointer:: ; c5c4
-	dw
+	ds 2
 wAnimatedObjectOAMDataPointer:: ; c5c6
-	dw
+	ds 2
 wCurAnimatedObjectOAMAttributes:: ; c5c8
 	ds 1
 wCurrentAnimatedObjectVTileOffset:: ; c5c9
@@ -514,6 +506,8 @@ wc6ed:: ; c6ed
 wPrinterChecksum:: ; c6ee
 	dw
 
+UNION
+
 wPrinterSerialReceived:: ; c6f0
 	ds 1
 wPrinterStatusReceived:: ; c6f1
@@ -533,13 +527,16 @@ wLYOverridesEnd::
 wLYOverridesBuffer:: ; c800
 	ds $100
 wLYOverridesBufferEnd:: ; c900
-	ds wPrinterSerialReceived - @
+
+NEXTU
 
 wPrinterSendDataSource1:: ; c6f0
 ; two 20-tile buffers
 	ds $140
 wPrinterSendDataSource2::
 	ds $140
+ENDU
+
 wPrinterSendDataSource1End:: ; c970
 
 wPrinterHandshake:: ; c970
@@ -1865,7 +1862,7 @@ wEnemyMonDefense::   dw
 wEnemyMonSpeed::     dw
 wEnemyMonSpecial::   dw
 wEnemyMonPP::        ds 3 ; NUM_MOVES - 1
-SECTION "WRAM Bank 1", WRAMX, BANK[1]
+SECTION "WRAM Bank 1", WRAMX
                      ds 1 ; NUM_MOVES - 3
 
 wEnemyMonBaseStats:: ds 5
@@ -2849,6 +2846,8 @@ wPikachuMovementFlags:: ; d44c
 ; bit 7 - signal end of command
 	ds 1
 
+UNION
+
 wCurPikaMovementData:: ; d44d
 wCurPikaMovementParam1:: ds 1 ; d44d
 wCurPikaMovementFunc1:: ds 1 ; d44e
@@ -2864,8 +2863,8 @@ wPikachuStepTimer:: ds 1 ; d457
 wPikachuStepSubtimer:: ds 1 ; d458
 	ds 5
 wCurPikaMovementDataEnd:: ; d45e
-	ds wCurPikaMovementData - @
 
+NEXTU
 
 wPikaPicAnimPointer:: dw ; d44d
 wPikaPicAnimPointerSetupFinished:: ds 1 ; d44f
@@ -2886,6 +2885,7 @@ wCurPikaPicAnimObjectFrameTimer:: db ; d45b
 wCurPikaPicAnimObjectEnd:: ; d45d
 
 	ds 18
+ENDU
 
 wPikachuHappiness:: ds 1 ; d46f
 wPikachuMood:: ds 1 ; d470
@@ -3493,10 +3493,12 @@ wSerialEnemyDataBlock:: ; d892
 wEnemyPartyCount:: ds 1     ; d89b
 wEnemyPartyMons::  ds PARTY_LENGTH + 1 ; d89c
 
+UNION
+
 wWaterRate:: db ; d8a3
 wWaterMons:: db ; d8a4
 
-	ds wWaterRate - @
+NEXTU
 
 wEnemyMons:: ; d8a3
 wEnemyMon1:: party_struct wEnemyMon1
@@ -3509,6 +3511,7 @@ wEnemyMon6:: party_struct wEnemyMon6
 wEnemyMonOT::    ds NAME_LENGTH * PARTY_LENGTH ; d9ab
 wEnemyMonNicks:: ds NAME_LENGTH * PARTY_LENGTH ; d9ed
 
+ENDU
 
 wTrainerHeaderPtr:: ; da2f
 	ds 2
@@ -3582,9 +3585,8 @@ wLastOBP1:: ds 1 ; def3
 wdef5:: ds 1 ; def4
 wBGPPalsBuffer:: ds NUM_ACTIVE_PALS * PAL_SIZE ; def5
 
-SECTION "Stack", WRAMX[$dfff], BANK[1]
+SECTION "Stack", WRAMX
 wStack:: ; dfff
-	ds -$100
 
 
 INCLUDE "sram.asm"
